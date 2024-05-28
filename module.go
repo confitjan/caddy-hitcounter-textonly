@@ -120,9 +120,7 @@ func (hc *HitCounter) CustomTemplateFunctions() template.FuncMap {
 
 			// generate the HTML to display the count
 			var sb strings.Builder
-			for _, digit := range countStr {
-				sb.WriteString(hc.imgTags[int(digit)-'0'])
-			}
+			sb.WriteString(countStr)
 
 			return sb.String(), nil
 		},
